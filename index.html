@@ -1,12 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CV-Nikita Olchowski</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <div class="wrapper">
+        <header>
+            <div class="container">
+                <div class="profile-photo">
+                    <img src="photo.png" alt="Nikita Olchowski">
+                </div>
+                <div class="header-text">
+                    <h1>Nikita Olchowski</h1>
+                    <p>Test Engineer</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#code">Code Example</a></li>
+					<li><a href="#about-me">About Me</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="contact">
+                <h2>Contact Information</h2>
+                <ul>
+					<li>Email: <a> nikita.olchowski@gmail.com</a></li>
+                    <li>Github: <a href="https://github.com/Nocturnafd">Nocturnafd</a></li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/olchowski-nikita/">Nikita Olchowski</a></li>
+                </ul>
+            </section>
+
+            <section id="skills">
+                <h2>Technical Skills</h2>
+                <ul>
+                    <li>Python</li>
+                    <li>Django framework</li>
+                    <li>Test Management Platforms (JIRA, DOORS, Polarion)</li>
+                    <li>Automated Testing (CANoe)</li>
+                    <li>API Testing</li>
+                    <li>CI/CD (Jenkins, Wind River)</li>
+                    <li>Prototyping and modeling in Autodesk Inventor, Fusion 360</li>
+                </ul>
+            </section>
+
+            <section id="experience">
+                <h2>Professional Experience</h2>
+                <div>
+                    <h3>Test Engineer</h3>
+                    <p><strong>ALTEN Polska (Project for APTIV)</strong></p>
+                    <p><em>September 2023 - Present</em></p>
+                    <ul>
+                        <li>BCM (body control module) for Jeep, Fiat. Automatic tests.</li>
+                        <li>Functional Safety Tests</li>
+                        <li>CI/CT systems integration</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Test Engineer</h3>
+                    <p><strong>ALTEN Polska (Project for ZF)</strong></p>
+                    <p><em>July 2022 - September 2023</em></p>
+                    <ul>
+                        <li>Testing Advanced Driver assistance systems (KAFAS) for BMW, Rolls-Royce</li>
+                        <li>Functional Safety Tests</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Junior Test Engineer</h3>
+                    <p><strong>Kawasaki Robotics Central and Eastern Europe HUB</strong></p>
+                    <p><em>January 2020 - July 2022</em></p>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=A0vw0HiIhZw">Testing Kawasaki DuAro robot (Collaborative robot) </a></li>
+                        <li>Development and simulation of robotic workstations using K-Roset software</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+                <div>
+                    <h3>Master</h3>
+                    <p><strong>Cracow University of Technology</strong></p>
+                    <p><em>2021 - 2022</em></p>
+                    <p>Field of Study: Infotroniks</p>
+                </div>
+                <div>
+                    <h3>Engineer</h3>
+                    <p><strong>Cracow University of Technology</strong></p>
+                    <p><em>2017 - 2021</em></p>
+                    <p>Field of Study: Power Engineering / Electrical machines and devices</p>
+                </div>
+            </section>
+
+            <section id="certificates">
+                <h2>Certificates</h2>
+                <ul>
+                    <li>Laureate of the Academy of Young Project Manager (2020)</li>
+                    <li>Nokia Academy certificate: 2-month long in-house testing-oriented training (IT&V Engineer) (2022)</li>
+                </ul>
+            </section>
+
+            <section id="code">
+                <h2>Code Example</h2>
+                <div class="code-example">
+                    <h3>Problem</h3>
+                    <p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list. You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
+                    <h3>Solution</h3>
+					<h4>Given solution was made in Python (version 3.11)</h4>
+                    <pre>
+<code>
+def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+    dummyHead = ListNode(0)
+    tail = dummyHead
+    carry = 0
+
+    while l1 is not None or l2 is not None or carry != 0:
+        digit1 = l1.val if l1 is not None else 0
+        digit2 = l2.val if l2 is not None else 0
+
+        sum = digit1 + digit2 + carry
+        digit = sum % 10
+        carry = sum // 10
+
+        newNode = ListNode(digit)
+        tail.next = newNode
+        tail = tail.next
+
+        l1 = l1.next if l1 is not None else None
+        l2 = l2.next if l2 is not None else None
+
+    result = dummyHead.next
+    dummyHead.next = None
+    return result
+</code>
+                    </pre>
+                </div>
+            </section>
+				<section id="about-me">
+		<div class="about-container">
+			<div class="about-info">
+				<h2>About Me</h2>
+				<p>I am a passionate and experienced Test Automation Engineer specializing in the automotive industry. With a strong background in software testing and a keen eye for detail, I strive to ensure the highest quality in automotive software systems. My expertise lies in developing automated test scripts, maintaining test frameworks, and collaborating with cross-functional teams to deliver reliable and efficient solutions.</p>
+				<p>In my free time, I enjoy exploring new technologies, working on personal projects, and staying up-to-date with the latest advancements in the automotive and software testing fields.</p>
+			</div>
+		</div>
+	</section>
+        </main>
+    </div>
+
+	<footer>
+        <p>
+            <a href="https://github.com/Nocturnafd">
+                <svg width="16" height="16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.68 7.68 0 0 1 8 4.93c.68.003 1.36.092 2 .27 1.52-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a> |
+			<a href="https://rs.school/courses/javascript-ru">
+				<img src="https://github.com/rolling-scopes-school/tasks/raw/master/tasks/cv/rs-school-logo.svg" alt="RS School Logo" width="64" height="64" style="vertical-align: middle;">
+			</a>
+				|	Made in 2024 by Nikita Olchowski
+		</p>
+	</footer>
 </body>
 </html>
